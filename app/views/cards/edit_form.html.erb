@@ -1,0 +1,15 @@
+<h1>Edit Card #<%= @card.id %></h1>
+
+<h4><%= @card.title %></h4>
+
+<form action="/update_card/<%= @card.id %>">
+  <label for="">Title:</label>
+  <input type="text" name="the_title" value="<%= @card.title %>">
+
+  <label for="">Description:</label>
+  <input type="text" name="the_description" value="<%= @card.description %>">
+
+  <button>
+    Update Card
+  </button>
+</form>

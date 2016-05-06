@@ -1,0 +1,16 @@
+<h1>Howdy</h1>
+
+<a href="/cards/new">Add a new card</a>
+
+<ul>
+<% @cards.each do |card| %>
+  <li>
+    <h4>
+      <%= card.title %>
+      <a href="/cards/<%= card.id %>/edit">Edit</a>
+    </h4>
+
+    <p><%= card.description %></p>
+  </li>
+<% end %>
+</ul>
