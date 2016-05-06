@@ -1,0 +1,16 @@
+checkout:
+  post:
+    - sudo apt install subversion apache2 libapache2-svn
+    - svn export https://github.com/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/trunk/spec spec --force
+
+machine:
+  ruby:
+    version: 2.3.0
+
+notify:
+  webhooks:
+    - url: https://grades.firstdraft.com/builds
+
+test:
+  override:
+    - bundle exec rspec --order default --format documentation --format j --out $CIRCLE_ARTIFACTS/rspec_output.json
