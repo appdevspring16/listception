@@ -19,3 +19,13 @@ rails g model card title:string description:text
 Now that we have our table, we can add a few rows through `rails console`.
 
 And now, our real work begins: provide a browser-based interface for our users to create, read, update, and delete rows from the table. In other words: time to build The Golden Seven.
+
+Once that is complete, do the exact same thing, but create a different table called `List` with only one column, `title`:
+
+```
+rails g model list title:string
+```
+
+Now build The Golden Seven for it.
+
+You can Sync with the master branch and create a new branch again to bring down all the code that I wrote for Card.
